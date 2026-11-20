@@ -317,5 +317,5 @@ async function route() {
 window.addEventListener('hashchange', route);
 window.addEventListener('online', () => { online = true; toast('Online — sinkronisasi draft'); syncDrafts(); route(); });
 window.addEventListener('offline', () => { online = false; toast('Mode offline'); route(); });
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
 route();
