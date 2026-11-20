@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<title>WA-CRM Multi-Hospital</title>
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app"></div>
+<nav id="bottomnav" class="hidden">
+  <button data-tab="home"><span>🏠</span>Beranda</button>
+  <button data-tab="conversations"><span>💬</span>Percakapan<span class="badge" id="badge-conv"></span></button>
+  <button data-tab="registrations"><span>📋</span>Pendaftaran</button>
+  <button data-tab="more"><span>⚙️</span>Lainnya</button>
+</nav>
+<div id="toast"></div>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
