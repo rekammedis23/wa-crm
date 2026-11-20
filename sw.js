@@ -1,8 +1,8 @@
 // sw.js — PWA service worker. Naikkan CACHE_VERSION setiap kali frontend berubah (v1 -> v2 ...)
 // agar cache lama dihapus saat activate dan pengguna tidak stuck di versi lama.
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v1.2';
 const CACHE_NAME = 'crm-shell-' + CACHE_VERSION;
-const SHELL = ['/', '/index.html', '/app.js', '/styles.css', '/manifest.webmanifest'];
+const SHELL = ['./', './index.html', './app.js', './styles.css', './manifest.webmanifest'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE_NAME).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
