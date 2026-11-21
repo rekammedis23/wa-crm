@@ -11,14 +11,40 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="app"></div>
-<nav id="bottomnav" class="hidden">
-  <button data-tab="home"><span>🏠</span>Beranda</button>
-  <button data-tab="conversations"><span>💬</span>Percakapan<span class="badge" id="badge-conv"></span></button>
-  <button data-tab="registrations"><span>📋</span>Pendaftaran</button>
-  <button data-tab="more"><span>⚙️</span>Lainnya</button>
-</nav>
-<div id="toast"></div>
+<div id="app">
+  <aside id="sidebar" class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">🏥</div>
+      <div><div class="brand-name">WA CRM Klinik</div><div class="brand-sub">Multi-Tenant</div></div>
+    </div>
+    <nav class="side-nav" id="side-nav"></nav>
+    <div class="side-footer">
+      <div class="org-switch" id="side-org"></div>
+      <div class="user-chip" id="user-chip"></div>
+    </div>
+  </aside>
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menu-btn">☰</button>
+      <div class="topbar-title" id="page-title">Dashboard</div>
+      <div class="topbar-right">
+        <span class="online-chip" id="online-chip"><span class="dot"></span><span id="online-text">online</span></span>
+        <span class="sync-chip hidden" id="sync-chip">📥 <span id="sync-count">0</span></span>
+        <select id="fac-select" class="fac-select"></select>
+      </div>
+    </header>
+    <main id="view" class="view"></main>
+  </div>
+  <nav class="bottom-nav" id="bottom-nav">
+    <button data-route="dashboard"><span class="bn-ico">🏠</span><span>Beranda</span></button>
+    <button data-route="conversations"><span class="bn-ico">💬</span><span>Percakapan</span><span class="bn-badge hidden" id="bn-badge"></span></button>
+    <button data-route="registrations"><span class="bn-ico">📋</span><span>Daftar</span></button>
+    <button data-route="more"><span class="bn-ico">☰</span><span>Lainnya</span></button>
+  </nav>
+</div>
+<div class="modal-backdrop hidden" id="modal"><div class="modal" id="modal-body"></div></div>
+<div class="toast hidden" id="toast"></div>
+<div class="login-screen hidden" id="login-screen"></div>
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js"></script>
